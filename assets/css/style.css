@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --green-color: hsl(169, 82%, 27%);
+    --red-color: hsl(0, 66%, 54%);
+
+    --dark-color: hsl(187, 24%, 22%);
+    --light-color: hsl(186, 15%, 59%);
+    --lighter-color: hsl(148, 38%, 91%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+    transition: all .2s ease-in-out;
+    user-select: none;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: var(--lighter-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 450px) {
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: white;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+
+    @media (max-width: 450px) {
+        min-height: 100%;
+        min-width: 100%;
+        padding: 20px;
+    }
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+.input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-field span:first-child,
+.fType {
+    color: var(--dark-color);
+    font-weight: 500;
+    font-size: .8rem;
+}
+
+.input-field span:last-child,
+.lType {
+    color: var(--red-color);
+    font-weight: 500;
+    font-size: .8rem;
+}
+
+.input-field input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    outline: none;
+    min-width: 100%;
+    font-size: 1rem;
+}
+
+.input-field input:focus-visible,
+#message:focus-visible {
+    border: 1px solid rgb(12, 125, 105) !important;
+}
+
+.half {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+
+    @media (max-width: 450px) {
+        flex-wrap: wrap;
+    }
+}
+
+.radio-field {
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    min-width: 49%;
+    align-items: center;
+
+    @media (max-width: 450px) {
+        min-width: 100%;
+    }
+}
+
+.radio-field span:last-child {
+    color: var(--dark-color);
+}
+
+.w-100 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.radio {
+    display: flex;
+    min-height: 15px;
+    min-width: 15px;
+    border: 1px solid var(--light-color);
+    border-radius: 50%;
+}
+
+.radio>.actived {
+    margin: auto;
+    transform: translateX(0%);
+    min-height: 9px;
+    min-width: 9px;
+    border: 1px solid var(--green-color);
+    border-radius: 50%;
+    background: var(--green-color);
+    display: none;
+}
+
+input:checked+.radio-field {
+    background: rgba(12, 125, 105, .2);
+    border: 1px solid var(--green-color);
+}
+
+input:checked+.radio-field .radio {
+    border-color: var(--green-color);
+}
+
+input:checked+.radio-field .radio .actived {
+    background: var(--green-color);
+    display: block;
+}
+
+.text-hidden {
+    display: none;
+}
+
+#message {
+    height: 6rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+}
+
+.consent-field {
+    display: flex;
+    gap: 5px;
+}
+
+.checkbox {
+    display: flex;
+    height: 15px;
+    width: 15px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-radius: 2px;
+}
+
+.checkbox>.actived {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: none;
+    color: white;
+    font-weight: 900;
+    font-size: .5rem;
+}
+
+
+#consent:checked+.checkbox {
+    border: 1px solid var(--green-color);
+    background: var(--green-color);
+}
+
+#consent:checked+.checkbox .actived {
+    display: block;
+}
+
+.submit {
+    background: var(--green-color);
+    padding: 7.5px 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+}
+
+.submit:hover {
+    filter: brightness(.95);
+    cursor: pointer;
+}
