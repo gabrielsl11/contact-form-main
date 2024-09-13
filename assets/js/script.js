@@ -1,6 +1,6 @@
 document.querySelector('.container').addEventListener('submit', (event) => {
     event.preventDefault();
-    
+
     let fname = document.querySelector('#fname').value;
     let lname = document.querySelector('#lname').value;
     let email = document.querySelector('#email').value;
@@ -54,5 +54,13 @@ document.querySelector('.container').addEventListener('submit', (event) => {
         document.querySelector('.consentHidden').classList.remove('text-hidden');
     } else {
         document.querySelector('.consentHidden').classList.add('text-hidden');
+    }
+
+    if ((!fname == '') && (!lname == '') && (!email == '') && ((gEnquiry.checked) || (sRequest.checked)) && (!message == '') && consent.checked) {
+        document.querySelector('.alert-field').classList.add('successfuly-sent');
+
+        setTimeout(() => {
+            document.querySelector('.alert-field').classList.remove('successfuly-sent');
+        }, 2000);
     }
 })

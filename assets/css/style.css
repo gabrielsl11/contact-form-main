@@ -216,12 +216,12 @@ input:checked+.radio-field .radio .actived {
 }
 
 
-#consent:checked+.checkbox {
+#consent:checked ~ .checkbox-field .checkbox {
     border: 1px solid var(--green-color);
     background: var(--green-color);
 }
 
-#consent:checked+.checkbox .actived {
+#consent:checked ~ .checkbox-field .checkbox .actived {
     display: block;
 }
 
@@ -238,4 +238,31 @@ input:checked+.radio-field .radio .actived {
 .submit:hover {
     filter: brightness(.95);
     cursor: pointer;
+}
+
+.alert-field {
+    position: absolute;
+    top: -100px;
+    color: white;
+    background: var(--dark-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+}
+
+.successfuly-sent {
+    top: 15px !important;
+}
+
+.alert-field>div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.alert-field>span {
+    font-size: .8rem;
+    color: var(--lighter-color);
 }
