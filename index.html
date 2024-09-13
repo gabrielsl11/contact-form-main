@@ -18,28 +18,28 @@
             <label for="fname" class="input-field">
                 <span>First Name</span>
                 <input type="text" id="fname">
-                <span class="text-hidden">This field is required</span>
+                <span class="text-hidden fnameHidden">This field is required</span>
             </label>
             <label for="lname" class="input-field">
                 <span>Last Name</span>
                 <input type="text" id="lname">
-                <span class="text-hidden">This field is required</span>
+                <span class="text-hidden lnameHidden">This field is required</span>
             </label>
         </section>
 
         <label for="email" class="input-field">
             <span>Email Address</span>
 
-            <input type="email" id="email">
+            <input type="text" id="email">
 
-            <span class="text-hidden">Please enter a valid email address</span>
+            <span class="text-hidden emailHidden">Please enter a valid email address</span>
         </label>
 
         <div class="w-100">
             <span class="fType">Query Type</span>
 
             <section class="half">
-                <input type="radio" name="query" id="gEnquiry" class="hidden">
+                <input type="radio" name="query" id="gEnquiry" value="gEnquiry" class="hidden">
                 <label for="gEnquiry" class="radio-field">
                     <div class="radio">
                         <div class="actived">
@@ -48,7 +48,7 @@
                     <span>General Enquiry</span>
                 </label>
 
-                <input type="radio" name="query" id="sRequest" class="hidden">
+                <input type="radio" name="query" id="sRequest" value="sRequest" class="hidden">
                 <label for="sRequest" class="radio-field">
                     <div class="radio">
                         <div class="actived">
@@ -58,7 +58,7 @@
                 </label>
             </section>
 
-            <span class="lType text-hidden">Please select a query type</span>
+            <span class="lType text-hidden queryHidden">Please select a query type</span>
         </div>
 
         <label for="message" class="input-field">
@@ -66,23 +66,24 @@
 
             <textarea id="message"></textarea>
 
-            <span class="text-hidden">This field is required</span>
+            <span class="text-hidden messageHidden">This field is required</span>
         </label>
 
         <label for="consent" class="consent-field">
             <input type="checkbox" id="consent" class="hidden">
 
-            <div class="checkbox">
-                <div class="actived">
-                    ✓
+            <div class="checkbox-field">
+                <div class="checkbox">
+                    <div class="actived">
+                        ✓
+                    </div>
                 </div>
+                <span class="fType">I consent to being contacted by the team</span>
             </div>
 
-            <span class="fType">I consent to being contacted by the team</span>
-
-            <span class="text-hidden">To submit this form, please consent to being contacted</span>
+            <span class="text-hidden consentHidden">To submit this form, please consent to being contacted</span>
         </label>
-
+        
         <button class="submit">
             Submit
         </button>
